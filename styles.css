@@ -18,7 +18,15 @@
 }
 
 .process-section {
-    background-color: #0099ff;
+    aspect-ratio: 16/4;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.process-image {
+    background-image: url(assets/images/layered-waves-haikei.svg);
 }
 
 .cta-section {
