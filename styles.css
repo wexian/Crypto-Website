@@ -1,0 +1,34 @@
+@import url(https://db.onlinewebfonts.com/c/8f2a9d487bbbc60974cd132fc3a63862?family=Aeonik+Regular);
+
+* {
+    font-family: "Aeonik Regular", sans-serif;
+    scroll-behavior: smooth;
+}
+
+.hero-page {
+    aspect-ratio: 16/9;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.image {
+    background-image: url(assets/images/wave.svg);
+}
+
+.process-section {
+    background-color: #0099ff;
+}
+
+.cta-section {
+    aspect-ratio: 6/1;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.cta-image {
+    background-image: url(assets/images/blob-scene-haikei.svg);
+}
