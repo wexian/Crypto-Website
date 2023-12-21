@@ -22,9 +22,12 @@ function formatLargeNumber(number) {
   }
 }
 
+let apiArray;
+
 fetch("https://api.coincap.io/v2/assets/")
   .then((response) => response.json())
   .then((result) => {
+    apiArray = result;
     // Check if result.data is an array
     if (Array.isArray(result.data)) {
       result.data.forEach((coin) => {
@@ -53,6 +56,7 @@ fetch("https://api.coincap.io/v2/assets/")
 fetch("https://api.coincap.io/v2/assets/")
   .then((response) => response.json())
   .then((result) => {
+    apiArray = result;
     // Check if result.data is an array
     if (Array.isArray(result.data) && result.data.length > 0) {
       const firstCoin = result.data[0];
@@ -60,25 +64,20 @@ fetch("https://api.coincap.io/v2/assets/")
         firstCoin.changePercent24Hr
       ).toFixed(2);
 
-      //   Format soon so that it will show the top 3 highest price
-      document.querySelector("#highlighted-coin").innerHTML += `
-        <tr>
-          <td>${result.data[0].symbol} ${result.data[0].id}</td>
-          <td>${USDollar.format(result.data[0].priceUsd)}</td>
-          <td>${roundedChangePercent}</td>
-        <tr>
-        <tr>
-        <td>${result.data[0].symbol} ${result.data[0].id}</td>
-        <td>${USDollar.format(result.data[0].priceUsd)}</td>
-        <td>${roundedChangePercent}</td>
-        <tr>
-        <tr>
-        <td>${result.data[0].symbol} ${result.data[0].id}</td>
-        <td>${USDollar.format(result.data[0].priceUsd)}</td>
-        <td>${roundedChangePercent}</td>
-        <tr>
-      
-      `;
+      //   Show the top 3 highest crypto price
+      let highlight = apiArray.data
+        .sort((a, b) => parseFloat(b.priceUsd) - parseFloat(a.priceUsd))
+        .slice(0, 3);
+
+      highlight.forEach((element) => {
+        document.querySelector("#highlighted-coin").innerHTML += `
+            <tr>
+              <td>${element.symbol} ${element.id}</td>
+              <td>${USDollar.format(element.priceUsd)}</td>
+              <td>${roundedChangePercent}</td>
+            </tr>
+          `;
+      });
     } else {
       console.error("Data not in the expected format or empty array");
     }
