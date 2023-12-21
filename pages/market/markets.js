@@ -31,14 +31,11 @@ fetch("https://api.coincap.io/v2/assets/")
     // Check if result.data is an array
     if (Array.isArray(result.data)) {
       result.data.forEach((coin) => {
-        const roundedChangePercent = parseFloat(coin.changePercent24Hr).toFixed(
-          2
-        );
         document.querySelector("#tableArea").innerHTML += `
           <tr>
             <td>${coin.symbol} ${coin.id}</td>
             <td>${USDollar.format(coin.priceUsd)}</td>
-            <td>${roundedChangePercent}</td>
+            <td>${parseFloat(coin.changePercent24Hr).toFixed(2)}</td>
             <td>$${formatLargeNumber(coin.volumeUsd24Hr)}</td>
             <td>$${formatLargeNumber(coin.marketCapUsd)}</td>
           </tr>
@@ -59,11 +56,6 @@ fetch("https://api.coincap.io/v2/assets/")
     apiArray = result;
     // Check if result.data is an array
     if (Array.isArray(result.data) && result.data.length > 0) {
-      const firstCoin = result.data[0];
-      const roundedChangePercent = parseFloat(
-        firstCoin.changePercent24Hr
-      ).toFixed(2);
-
       //   Show the top 3 highest crypto price
       let highlight = apiArray.data
         .sort((a, b) => parseFloat(b.priceUsd) - parseFloat(a.priceUsd))
@@ -74,7 +66,7 @@ fetch("https://api.coincap.io/v2/assets/")
             <tr>
               <td>${element.symbol} ${element.id}</td>
               <td>${USDollar.format(element.priceUsd)}</td>
-              <td>${roundedChangePercent}</td>
+              <td>${parseFloat(element.changePercent24Hr).toFixed(2)}</td>
             </tr>
           `;
       });
