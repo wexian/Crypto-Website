@@ -24,12 +24,14 @@ function formatLargeNumber(number) {
 
 let apiArray;
 
+//Top tokens, Highlighted, top gainer, and top volume coins
 fetch("https://api.coincap.io/v2/assets/")
   .then((response) => response.json())
   .then((result) => {
     apiArray = result;
     // Check if result.data is an array
     if (Array.isArray(result.data)) {
+      // Top Tokens
       result.data.forEach((coin) => {
         document.querySelector("#tableArea").innerHTML += `
           <tr>
@@ -44,17 +46,7 @@ fetch("https://api.coincap.io/v2/assets/")
     } else {
       console.error("Data not in the expected format");
     }
-  })
-  .catch((error) => {
-    console.error("Error fetching data:", error);
-  });
 
-//Highlighted coins
-fetch("https://api.coincap.io/v2/assets/")
-  .then((response) => response.json())
-  .then((result) => {
-    apiArray = result;
-    // Check if result.data is an array
     if (Array.isArray(result.data) && result.data.length > 0) {
       //   Show the top 3 highest crypto price
       let highlight = apiArray.data
@@ -69,6 +61,39 @@ fetch("https://api.coincap.io/v2/assets/")
               <td>${parseFloat(element.changePercent24Hr).toFixed(2)}</td>
             </tr>
           `;
+      });
+
+      //   Show the top gainer
+      let gainer = apiArray.data
+        .sort(
+          (a, b) =>
+            parseFloat(b.changePercent24Hr) - parseFloat(a.changePercent24Hr)
+        )
+        .slice(0, 3);
+
+      gainer.forEach((element) => {
+        document.querySelector("#topgain-coin").innerHTML += `
+          <tr>
+            <td>${element.symbol} ${element.id}</td>
+            <td>${USDollar.format(element.priceUsd)}</td>
+            <td>${parseFloat(element.changePercent24Hr).toFixed(2)}</td>
+          </tr>
+        `;
+      });
+
+      //   Show the top 3 volume
+      let volume = apiArray.data
+        .sort((a, b) => parseFloat(b.vwap24Hr) - parseFloat(a.vwap24Hr))
+        .slice(0, 3);
+
+      volume.forEach((element) => {
+        document.querySelector("#topvol-coin").innerHTML += `
+        <tr>
+          <td>${element.symbol} ${element.id}</td>
+          <td>${USDollar.format(element.priceUsd)}</td>
+          <td>${parseFloat(element.changePercent24Hr).toFixed(2)}</td>
+        </tr>
+      `;
       });
     } else {
       console.error("Data not in the expected format or empty array");
