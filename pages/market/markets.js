@@ -35,11 +35,11 @@ fetch("https://api.coincap.io/v2/assets/")
       result.data.forEach((coin) => {
         document.querySelector("#tableArea").innerHTML += `
           <tr>
-            <td>${coin.symbol} ${coin.id}</td>
-            <td>${USDollar.format(coin.priceUsd)}</td>
-            <td>${parseFloat(coin.changePercent24Hr).toFixed(2)}</td>
-            <td>$${formatLargeNumber(coin.volumeUsd24Hr)}</td>
-            <td>$${formatLargeNumber(coin.marketCapUsd)}</td>
+            <td><span class="fw-bold">${coin.symbol}</span> <span class="text-secondary">${coin.id}</span></td>
+            <td class="text-start">${USDollar.format(coin.priceUsd)}</td>
+            <td class="text-center">${parseFloat(coin.changePercent24Hr).toFixed(2)}</td>
+            <td class="text-center">$${formatLargeNumber(coin.volumeUsd24Hr)}</td>
+            <td class="text-center">$${formatLargeNumber(coin.marketCapUsd)}</td>
           </tr>
         `;
       });
@@ -56,9 +56,9 @@ fetch("https://api.coincap.io/v2/assets/")
       highlight.forEach((element) => {
         document.querySelector("#highlighted-coin").innerHTML += `
             <tr>
-              <td>${element.symbol} ${element.id}</td>
-              <td>${USDollar.format(element.priceUsd)}</td>
-              <td>${parseFloat(element.changePercent24Hr).toFixed(2)}</td>
+              <td class="text-center fw-bold">${element.symbol}</td>
+              <td class="text-center">${USDollar.format(element.priceUsd)}</td>
+              <td class="text-center">${parseFloat(element.changePercent24Hr).toFixed(2)}</td>
             </tr>
           `;
       });
@@ -74,9 +74,9 @@ fetch("https://api.coincap.io/v2/assets/")
       gainer.forEach((element) => {
         document.querySelector("#topgain-coin").innerHTML += `
           <tr>
-            <td>${element.symbol} ${element.id}</td>
-            <td>${USDollar.format(element.priceUsd)}</td>
-            <td>${parseFloat(element.changePercent24Hr).toFixed(2)}</td>
+            <td class="text-center fw-bold">${element.symbol}</td>
+            <td class="text-center">${USDollar.format(element.priceUsd)}</td>
+            <td class="text-center">${parseFloat(element.changePercent24Hr).toFixed(2)}</td>
           </tr>
         `;
       });
@@ -89,9 +89,9 @@ fetch("https://api.coincap.io/v2/assets/")
       volume.forEach((element) => {
         document.querySelector("#topvol-coin").innerHTML += `
         <tr>
-          <td>${element.symbol} ${element.id}</td>
-          <td>${USDollar.format(element.priceUsd)}</td>
-          <td>${parseFloat(element.changePercent24Hr).toFixed(2)}</td>
+          <td class="text-center fw-bold">${element.symbol}</td>
+          <td class="text-center">${USDollar.format(element.priceUsd)}</td>
+          <td class="text-center">${parseFloat(element.changePercent24Hr).toFixed(2)}</td>
         </tr>
       `;
       });

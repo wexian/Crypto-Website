@@ -76,47 +76,61 @@
       </div>
     </nav>
 
-    <header class="container mt-5 d-flex">
-      <h1 class="fw-bold">Markets Overview</h1>
-      <h3 class="fw-bold mt-2 ms-3">Trading Data</h3>
+    <header class="container mt-5">
+      <h1 class="fw-bold text-center">Markets Overview</h1>
+      <h3 class="fw-bold mt-3 ms-4 text-center">Trading Data</h3>
+      <hr class="w-50 border-5 text-primary mx-auto">
     </header>
 
     <!-- highligt coins section -->
     <section class="container">
       <div class="row">
         <div class="col-lg-4">
-          <table class="table border border black rounded-2">
-            <th>Highlighted Coin</th>
-            <th>Price</th>
-            <th>24h Change</th>
+          <table class="table table-hover table-borderless border">
+            <thead>
+              <tr class="border-bottom">
+                <th scope="col" class="text-center">Highlighted Coin</th>
+                <th scope="col" class="text-center">Price</th>
+                <th scope="col" class="text-center">24h Change</th>
+              </tr>
+            </thead>
             <tbody id="highlighted-coin"></tbody>
           </table>
         </div>
         <div class="col-lg-4">
-          <table class="table border border black rounded-2">
-            <th>Top Gainer Coin</th>
-            <th>Price</th>
-            <th>24h Change</th>
+          <table class="table table-hover table-borderless border">
+            <thead>
+              <tr class="border-bottom">
+                <th scope="col" class="text-center">Top Gainer Coin</th>
+                <th scope="col" class="text-center">Price</th>
+                <th scope="col" class="text-center">24h Change</th>
+              </tr>
+            </thead>
             <tbody id="topgain-coin"></tbody>
           </table>
         </div>
         <div class="col-lg-4">
-          <table class="table border border black rounded-2">
-            <th>Top Volume Coin</th>
-            <th>Price</th>
-            <th>24h Change</th>
+          <table class="table table-hover table-borderless border">
+            <thead>
+              <tr class="border-bottom">
+                <th scope="col" class="text-center">Top Volume Coin</th>
+                <th scope="col" class="text-center">Price</th>
+                <th scope="col" class="text-center">24h Change</th>
+              </tr>
+            </thead>
             <tbody id="topvol-coin"></tbody>
           </table>
         </div>
       </div>
     </section>
     <!-- Menu section -->
+    
     <section class="container mt-5 text-white">
-      <div class="rounded-4 border black shadow p-3">
-        <p class="fw-bold text-black ms-2">
+      <div class="rounded-4 border p-3">
+        <p class="fw-bold text-black ms-2 fs-5">
           Top tokens by Market Capitalization
         </p>
-        <p class="text-black ms-2">
+        <p class="text-secondary ms-2">
           Get a comprehensive snapshot of all cryptocurrencies available on
           SecureScape. This page displays the latest prices, 24-hour trading
           volume, price changes, and market capitalizations for all
@@ -124,7 +138,7 @@
           information about these digital assets and access the trade page from
           here.
         </p>
-        <p class="text-black ms-2">
+        <p class="text-secondary ms-2">
           The data presented is for informational purposes only. Some data is
           provided by CoinMarketCap and is shown on an “as is” basis, without
           representation or warranty of any kind. Please view our General Risk
@@ -134,15 +148,17 @@
     </section>
 
     <!-- Coins Section -->
-    <section class="container mt-3">
-      <table class="table">
-        <tr>
-          <th>Name</th>
-          <th>Price</th>
-          <th>24h Change</th>
-          <th>24h Volume</th>
-          <th>Market Cap</th>
-        </tr>
+    <section class="container mt-3 table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr class="fs-5">
+            <th>Name</th>
+            <th class="text-start">Price</th>
+            <th class="text-center">24h Change</th>
+            <th class="text-center">24h Volume</th>
+            <th class="text-center">Market Cap</th>
+          </tr>
+        </thead>
         <tbody id="tableArea"></tbody>
       </table>
     </section>

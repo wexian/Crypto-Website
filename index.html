@@ -15,6 +15,7 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -79,7 +80,8 @@
       <!--HERO SECTION-->
       <section class="container-fluid mt-4 hero-page image">
         <div class="row text-center">
-          <div class="col-md-6 d-flex flex-column justify-content-center">
+          <div class="col-md-6 d-flex flex-column justify-content-center" data-aos="fade-right"
+          data-aos-duration="3000">
             <h1 class="align-middle display-1">
               <span class="text-primary fw-bold">Secure</span
               ><span class="fw-bold">Scape</span><br />
@@ -92,7 +94,7 @@
                 Get Started <i class="fa-solid fa-arrow-down"></i></button
             ></a>
 
-            <div class="row mt-5 p-5">
+            <div class="row mt-5 p-5" data-aos="fade-up">
               <div class="col-md-4 text-center">
                 <h3 class="fw-bold display-5 text-dark">$49B</h3>
                 <p class="fs-5">Monthly Volume Traded</p>
@@ -107,7 +109,8 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6" data-aos="fade-left"
+          data-aos-duration="3000">
             <figure class="mt-5">
               <img
                 class="img-fluid"
@@ -208,60 +211,6 @@
         </button>
       </section>
 
-      <!--MARKET UPDATE-->
-      <!-- <section class="container mt-5 mb-5 border rounded-5 p-4 shadow">
-          <h1 class="fs-1 fw-bold text-center">Market Update</h1>
-          <hr>
-          <div class="row">
-            <div class="col-md-3">
-              <div class="border rounded-4 text-center p-3 my-3 mx-auto" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title fs-5 fw-bold">Bitcoin</h5>
-                  <small class="card-subtitle mb-2">BTC/USD</small>
-                  <h5 class="card-title fs-5 fw-bold mb-2 mt-2">USD 46,168.95</h5>
-                  <a href="#" class="card-link text-decoration-none text-secondary">36,641.20</a>
-                  <a href="#" class="card-link"><button class="btn btn-danger rounded-5">-0.79%</button></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="border rounded-4 text-center p-3 my-3 mx-auto" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title fs-5 fw-bold">Ethereum</h5>
-                  <small class="card-subtitle mb-2">ETH/USD</small>
-                  <h5 class="card-title fs-5 fw-bold mb-2 mt-2">USD 46,168.95</h5>
-                  <a href="#" class="card-link text-decoration-none text-secondary">36,641.20</a>
-                  <a href="#" class="card-link"><button class="btn btn-success rounded-5">+10.55%</button></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="border rounded-4 text-center p-3 my-3 mx-auto" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title fs-5 fw-bold">Tether</h5>
-                  <small class="card-subtitle mb-2">USDT/USD</small>
-                  <h5 class="card-title fs-5 fw-bold mb-2 mt-2">USD 46,168.95</h5>
-                  <a href="#" class="card-link text-decoration-none text-secondary">36,641.20</a>
-                  <a href="#" class="card-link"><button class="btn btn-danger rounded-5">-0.79%</button></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class=" border rounded-4 text-center p-3 my-3 mx-auto"  style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title fs-5 fw-bold">BNB</h5>
-                  <small class="card-subtitle mb-2">BNB/USD</small>
-                  <h5 class="card-title fs-5 fw-bold mb-2 mt-2">USD 46,168.95</h5>
-                  <a href="#" class="card-link text-decoration-none text-secondary">36,641.20</a>
-                  <a href="#" class="card-link"><button class="btn btn-danger rounded-5">-0.79%</button></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> -->
-
-      <!--MARKET TABLE-->
-      <!-- <section class="container mt-5 mb-5">
           <table class="table table-dark table-hover table-responsive text-center mt-5">
             <thead>
               <tr>
@@ -659,6 +608,10 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     <script src="script.js"></script>
     <script src="utilities.js"></script>
   </body>
