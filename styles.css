@@ -5,17 +5,6 @@
     scroll-behavior: smooth;
 }
 
-.hero-page {
-    aspect-ratio: 16/9;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
-.image {
-    background-image: url(assets/images/wave.svg);
-}
 
 .process-section {
     aspect-ratio: 16/4;

@@ -15,6 +15,7 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -77,15 +78,15 @@
     </nav>
 
     <header class="container mt-5">
-      <h1 class="fw-bold text-center">Markets Overview</h1>
-      <h3 class="fw-bold mt-3 ms-4 text-center">Trading Data</h3>
-      <hr class="w-50 border-5 text-primary mx-auto">
+      <h1 class="fw-bold text-center" data-aos="fade-up" data-aos-duration="1000">Markets Overview</h1>
+      <h3 class="fw-bold mt-3 ms-4 text-center" data-aos="fade-up" data-aos-duration="1000">Trading Data</h3>
+      <hr class="w-50 border-5 text-primary mx-auto" data-aos="fade-up" data-aos-duration="1000">
     </header>
 
     <!-- highligt coins section -->
     <section class="container">
       <div class="row">
-        <div class="col-lg-4">
+        <div class="col-lg-4" data-aos="fade-up" data-aos-duration="1000">
           <table class="table table-hover table-borderless border">
             <thead>
               <tr class="border-bottom">
@@ -94,10 +95,10 @@
                 <th scope="col" class="text-center">24h Change</th>
               </tr>
             </thead>
-            <tbody id="highlighted-coin"></tbody>
+            <tbody id="highlighted-coin" data-aos="fade-up" data-aos-duration="1000"></tbody>
           </table>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-4" data-aos="fade-up" data-aos-duration="1000">
           <table class="table table-hover table-borderless border">
             <thead>
               <tr class="border-bottom">
@@ -106,10 +107,10 @@
                 <th scope="col" class="text-center">24h Change</th>
               </tr>
             </thead>
-            <tbody id="topgain-coin"></tbody>
+            <tbody id="topgain-coin" data-aos="fade-up" data-aos-duration="1000"></tbody>
           </table>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-4" data-aos="fade-up" data-aos-duration="1000">
           <table class="table table-hover table-borderless border">
             <thead>
               <tr class="border-bottom">
@@ -118,19 +119,19 @@
                 <th scope="col" class="text-center">24h Change</th>
               </tr>
             </thead>
-            <tbody id="topvol-coin"></tbody>
+            <tbody id="topvol-coin" data-aos="fade-up" data-aos-duration="1000"></tbody>
           </table>
         </div>
       </div>
     </section>
     <!-- Menu section -->
     
-    <section class="container mt-5 text-white">
+    <section class="container mt-5 text-white" data-aos="fade-up" data-aos-duration="1000">
       <div class="rounded-4 border p-3">
-        <p class="fw-bold text-black ms-2 fs-5">
+        <p class="fw-bold text-black ms-2 fs-5" data-aos="fade-up" data-aos-duration="1000">
           Top tokens by Market Capitalization
         </p>
-        <p class="text-secondary ms-2">
+        <p class="text-secondary ms-2" data-aos="fade-up" data-aos-duration="1000">
           Get a comprehensive snapshot of all cryptocurrencies available on
           SecureScape. This page displays the latest prices, 24-hour trading
           volume, price changes, and market capitalizations for all
@@ -138,7 +139,7 @@
           information about these digital assets and access the trade page from
           here.
         </p>
-        <p class="text-secondary ms-2">
+        <p class="text-secondary ms-2" data-aos="fade-up" data-aos-duration="1000">
           The data presented is for informational purposes only. Some data is
           provided by CoinMarketCap and is shown on an “as is” basis, without
           representation or warranty of any kind. Please view our General Risk
@@ -150,7 +151,7 @@
     <!-- Coins Section -->
     <section class="container mt-3 table-responsive">
       <table class="table table-hover">
-        <thead>
+        <thead data-aos="fade-up" data-aos-duration="1000">
           <tr class="fs-5">
             <th>Name</th>
             <th class="text-start">Price</th>
@@ -159,14 +160,14 @@
             <th class="text-center">Market Cap</th>
           </tr>
         </thead>
-        <tbody id="tableArea"></tbody>
+        <tbody id="tableArea" data-aos="fade-up" data-aos-duration="1000"></tbody>
       </table>
     </section>
 
     <footer
       class="container-fluid mt-5 bg-dark d-flex flex-column justify-content-center"
     >
-      <h2 class="fs-1 text-center fw-bold text-white pt-5 pb-3">
+      <h2 class="fs-1 text-center fw-bold text-white pt-5 pb-3" data-aos="fade-up">
         Inquiries? Get in touch.
       </h2>
       <p class="text-white text-center text-decoration-underline mt-0">
@@ -186,6 +187,10 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     <script src="markets.js"></script>
     <script src="../../utilities.js"></script>
   </body>
