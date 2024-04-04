@@ -57,12 +57,11 @@ git push origin feature-name
 
 Open a pull request on GitHub.
 
-Feel free to customize this template further based on the specific details of your project. Add any extra sections, dependencies, or acknowledgments that you find relevant. Good luck with your JavaScript Game project!
-
 
 ## License
 
 This project is licensed under the MIT License.
 
+Feel free to customize this template further based on the specific details of your project. Add any extra sections, dependencies, or acknowledgments that you find relevant.
 
 
